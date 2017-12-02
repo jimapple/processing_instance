@@ -1,29 +1,46 @@
 Drop[] drops;
+Drop drop;
 int numDrops = 30;
 int curDrop = 0;
  
-void setup() { //<>//
+//void setup() { //<>//
+//  size(400, 400);
+//  ellipseMode(CENTER);
+//  smooth();
+//  drops = new Drop[numDrops]; //<>//
+//  for (int i = 0 ; i < numDrops ; i++) {
+//    drops[i] = new Drop(); //<>//
+//    drops[i].diameter = 0;
+//  }
+//}
+
+void setup() {
   size(400, 400);
   ellipseMode(CENTER);
   smooth();
-  drops = new Drop[numDrops]; //<>//
-  for (int i = 0 ; i < numDrops ; i++) {
-    drops[i] = new Drop(); //<>//
-    drops[i].diameter = 0;
-  }
+  drop = new Drop();
+  drop.diameter = 0;
+  //for (int i = 0 ; i < numDrops ; i++) {
+  //  drops[i] = new Drop();
+  //  drops[i].diameter = 0;
+  //}
 }
  
 void draw() {
   background(0);
-  for (int i = 0 ; i < numDrops ; i++) {
-      drops[i].spread();
-      drops[i].show();
-  }
+  //for (int i = 0 ; i < numDrops ; i++) {
+  //    drops[i].spread();
+  //    drops[i].show();
+  //}
+  println(1);
+  drop.spread();
+  drop.show();
 }
  
 void mousePressed() {
-  drops[curDrop].init( mouseX, mouseY );
-  if (++curDrop == numDrops) curDrop = 0;
+  //drops[curDrop].init( mouseX, mouseY );
+  drop.init( mouseX, mouseY );
+  //if (++curDrop == numDrops) curDrop = 0;
 }
 class Drop {
  
